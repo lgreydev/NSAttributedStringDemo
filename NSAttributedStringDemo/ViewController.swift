@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 
         addViews()
         addConstrains()
+        workString()
     }
 
 
@@ -43,5 +44,17 @@ extension ViewController{
         textView.centerInSuperview()
         textView.leadingToSuperview()
         textView.trailingToSuperview()
+    }
+
+    private func workString() {
+        guard let text = textView.text else { fatalError() }
+
+        let firstCharacter = text.startIndex
+        let fourthCharacter = text.index(firstCharacter, offsetBy: 3)
+
+        let first = text[firstCharacter]
+        let fourth = text[fourthCharacter]
+
+        print("firstCharacter: \(first)\nfourthCharacter: \(fourth)")
     }
 }

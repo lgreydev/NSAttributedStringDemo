@@ -47,14 +47,17 @@ extension ViewController{
     }
 
     private func workString() {
-        guard let text = textView.text else { fatalError() }
 
-        let firstCharacter = text.startIndex
-        let fourthCharacter = text.index(firstCharacter, offsetBy: 3)
+        let attributeString = NSMutableAttributedString(string: textView.text)
 
-        let first = text[firstCharacter]
-        let fourth = text[fourthCharacter]
+        let attribute = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20),
+            NSAttributedString.Key.backgroundColor: UIColor.magenta,
+            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
+        ] as [NSAttributedString.Key : Any]
 
-        print("firstCharacter: \(first)\nfourthCharacter: \(fourth)")
+        attributeString.addAttributes(attribute, range: (attributeString.string as NSString).range(of: "associated"))
+
+        textView.attributedText = attributeString
     }
 }

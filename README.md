@@ -1,10 +1,5 @@
 # NSAttributedString
 
-### Tools 🛠
-[Visual Attributed String](https://apps.apple.com/us/app/visual-attributed-string/id954961175)
-
-Create NSAttributedStrings for your iOS and Mac applications
-
 ### Configure Attributed String
 
 ``` swift
@@ -50,3 +45,8 @@ extension UIFont {
 }
 
 ```
+
+### Tools 🛠
+[Visual Attributed String](https://apps.apple.com/us/app/visual-attributed-string/id954961175)
+
+Create NSAttributedStrings for your iOS and Mac applications

@@ -42,6 +42,7 @@
 		5EC64C30282804E00058D5EE = {
 			isa = PBXGroup;
 			children = (
+				5EC64C55282A4FFB0058D5EE /* README.md */,
 				5EC64C3B282804E10058D5EE /* NSAttributedStringDemo */,
 				5EC64C3A282804E10058D5EE /* Products */,
 			);
@@ -64,7 +65,6 @@
 				5EC64C45282804E20058D5EE /* Assets.xcassets */,
 				5EC64C47282804E20058D5EE /* LaunchScreen.storyboard */,
 				5EC64C4A282804E20058D5EE /* Info.plist */,
-				5EC64C55282A4FFB0058D5EE /* README.md */,
 			);
 			path = NSAttributedStringDemo;
 			sourceTree = "<group>";

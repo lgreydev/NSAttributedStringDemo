@@ -1,48 +1,9 @@
-//
-//  ViewController.swift
-//  NSAttributedStringDemo
-//
-//  Created by Sergey Lukaschuk on 08.05.2022.
-//
-
-import UIKit
-import TinyConstraints
-
-class ViewController: UIViewController {
-
-    lazy var textView: UITextView = {
-        let view = UITextView()
-        view.backgroundColor = .yellow
-        view.text = "A string with associated attributes (such as visual style, hyperlinks, or accessibility data) for portions of its text."
-        return view
-    }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
-
-        addViews()
-        addConstrains()
-        workString()
-    }
-}
+# NSAttributedString
 
 
-extension ViewController{
-    private func addViews() {
-        view.addSubview(textView)
-    }
+### Configure Attributed String
 
-    private func addConstrains() {
-        constrainToTextView()
-    }
-
-    private func constrainToTextView() {
-        textView.height(200)
-        textView.centerInSuperview()
-        textView.leadingToSuperview()
-        textView.trailingToSuperview()
-    }
+``` swift
 
     private func workString() {
 
@@ -60,7 +21,12 @@ extension ViewController{
 
         textView.attributedText = attributeString
     }
-}
+
+```
+
+### Public methods
+
+``` swift
 
 extension UIFont {
 
@@ -78,3 +44,5 @@ extension UIFont {
         return withTraits(traits: .traitItalic)
     }
 }
+
+```

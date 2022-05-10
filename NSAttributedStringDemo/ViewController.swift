@@ -25,8 +25,6 @@ class ViewController: UIViewController {
         addConstrains()
         workString()
     }
-
-
 }
 
 
@@ -50,8 +48,10 @@ extension ViewController{
 
         let attributeString = NSMutableAttributedString(string: textView.text)
 
+        guard let font = UIFont(name: "Georgia", size: 20) else { fatalError() }
+
         let attribute = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20),
+            NSAttributedString.Key.font: font.bold(),
             NSAttributedString.Key.backgroundColor: UIColor.magenta,
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
         ] as [NSAttributedString.Key : Any]
@@ -59,5 +59,22 @@ extension ViewController{
         attributeString.addAttributes(attribute, range: (attributeString.string as NSString).range(of: "associated"))
 
         textView.attributedText = attributeString
+    }
+}
+
+extension UIFont {
+
+    private func withTraits(traits: UIFontDescriptor.SymbolicTraits) -> UIFont {
+        guard let descriptor = fontDescriptor.withSymbolicTraits(traits) else { fatalError() }
+        return UIFont(descriptor: descriptor, size: 0)
+    }
+
+    // MARK:  
+    func bold() -> UIFont {
+        return withTraits(traits: .traitBold)
+    }
+
+    func italic() -> UIFont {
+        return withTraits(traits: .traitItalic)
     }
 }
